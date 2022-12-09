@@ -37,10 +37,10 @@ namespace IngenicoLaneReceiptParser.Models
         public bool Parse(string htmlToParse)
         {
             bool res = true;
-            HtmlDocument? helpDocument = new();
+            HtmlDocument helpDocument = new HtmlDocument();
             helpDocument.LoadHtml(htmlToParse);
 
-            string? baseNode = "/html[1]/body[1]/div";
+            string baseNode = "/html[1]/body[1]/div";
 
             ReceiptHeader = new ReceiptHeader
             {
