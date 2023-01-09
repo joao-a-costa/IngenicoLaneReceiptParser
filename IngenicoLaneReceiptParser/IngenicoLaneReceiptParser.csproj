@@ -2,10 +2,32 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>IngenicoLaneReceiptParser</Title>
+    <Authors>João Costa</Authors>
+    <Description>HTML parser for Ingenico TPA receipts
+
+When TPA sends receipt event to print, the document is in HTML. This parses the HTML to objects so you can send the info you need to the printer.</Description>
+    <PackageProjectUrl>https://github.com/joao-a-costa/IngenicoLaneReceiptParser</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joao-a-costa/IngenicoLaneReceiptParser.git</RepositoryUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	 <VersionPrefix>1.0.4</VersionPrefix>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not &quot;$(ConfigurationName)&quot; == &quot;Debug&quot; (&#xD;&#xA;dotnet pack &quot;IngenicoLaneReceiptParser.csproj&quot;&#xD;&#xA;cd bin&#xD;&#xA;cd Debug&#xD;&#xA;dotnet nuget push IngenicoLaneReceiptParser.$(VersionPrefix).nupkg --api-key oy2nwpx3ffm77zjr7rmqjry7j3oy3cee5hwfzf45imjfre --source https://api.nuget.org/v3/index.json --skip-duplicate&#xD;&#xA;del /S *.nupkg&#xD;&#xA;)" />
+  </Target>
 
 </Project>
