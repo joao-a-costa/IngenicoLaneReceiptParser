@@ -83,7 +83,7 @@ namespace IngenicoLaneReceiptParser
                 ExpiryDateDisplay_Title = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[20]/div[2]"),
                 ICC = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[21]/div[1]"),
                 IssueNumber_Title = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[21]/div[2]"),
-                PANSEQ = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[21]/div[1]"),
+                PANSEQ = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[21]/div[3]"),
                 Text2 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[22]"),
                 Text3 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[23]"),
                 Text4 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[24]"),
