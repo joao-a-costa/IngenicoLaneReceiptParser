@@ -10,7 +10,7 @@ When TPA sends receipt event to print, the document is in HTML. This parses the 
     <PackageProjectUrl>https://github.com/joao-a-costa/IngenicoLaneReceiptParser</PackageProjectUrl>
     <RepositoryUrl>https://github.com/joao-a-costa/IngenicoLaneReceiptParser.git</RepositoryUrl>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-	 <VersionPrefix>1.0.4</VersionPrefix>
+	 <VersionPrefix>1.0.5</VersionPrefix>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
