@@ -25,7 +25,7 @@ namespace IngenicoLaneReceiptParserTests
             var testLane3000 = ingenicoLaneReceipt.ParseV2(File.ReadAllText(@"Files\lane3000.html"));
             var testLane3000V2 = ingenicoLaneReceipt.ParseV2(File.ReadAllText(@"Files\lane3000V2.html"));
 
-            Assert.AreEqual(true, testLane3000 && testLane3000);
+            Assert.AreEqual(true, testLane3000 && testLane3000V2);
         }
     }
 }
