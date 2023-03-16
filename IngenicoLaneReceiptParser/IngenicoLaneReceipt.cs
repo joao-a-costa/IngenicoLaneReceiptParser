@@ -1,6 +1,8 @@
 ﻿using HtmlAgilityPack;
 using IngenicoLaneReceiptParser.Models;
 using IngenicoLaneReceiptParser.Utilities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace IngenicoLaneReceiptParser
 {
@@ -31,6 +33,7 @@ namespace IngenicoLaneReceiptParser
         public PaymentDetails PaymentDetails { get; set; } = new PaymentDetails();
         public ReceiptFooter ReceiptFooter { get; set; } = new ReceiptFooter();
         public string BaseXPath { get; set; } = "/html[1]/body[1]/div";
+        public List<string> Result { get; set; } = new List<string>();
 
         #endregion
 
@@ -114,6 +117,23 @@ namespace IngenicoLaneReceiptParser
                 Text13 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[53]/div[1]"),
                 Text14 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[54]/div[1]"),
             };
+
+            return res;
+        }
+
+        public bool ParseV2(string htmlToParse)
+        {
+            bool res = true;
+            HtmlDocument helpDocument = new HtmlDocument();
+            helpDocument.LoadHtml(htmlToParse);
+
+            helpDocument.DocumentNode.SelectNodes(BaseXPath).ToList().ForEach(fe =>
+            {
+                var innerText = fe.InnerText;
+
+                if (!string.IsNullOrEmpty(innerText))
+                    Result.Add(innerText);
+            });
 
             return res;
         }
