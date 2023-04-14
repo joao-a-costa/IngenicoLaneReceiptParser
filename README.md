@@ -1,7 +1,7 @@
 # IngenicoLaneReceiptParser
 HTML parser for Ingenico TPA receipts
 
-When TPA sends receipt event to print, the document is in HTML. This parses the HTML to objects so you can send the info you need to the printer.
+This project provides an HTML parsing solution that caters to Ingenico TPA receipts, allowing you to effortlessly extract relevant information from an HTML document. When a receipt event is sent to print, the information is typically embedded in HTML format, making it difficult to access and process. The parser seamlessly converts the HTML into objects, making it easier to extract specific data and streamline your printing processes.
 
 Sample:
 ````
