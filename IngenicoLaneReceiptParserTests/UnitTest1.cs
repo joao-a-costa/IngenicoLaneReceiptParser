@@ -27,5 +27,18 @@ namespace IngenicoLaneReceiptParserTests
 
             Assert.AreEqual(true, testLane3000 && testLane3000V2);
         }
+
+
+        [TestMethod]
+        public void TestParseLane3000V3()
+        {
+            IngenicoLaneReceipt ingenicoLaneReceipt = new(IngenicoLaneReceipt.IngenicoLaneModel.Lane3000);
+
+            var testLane3000 = ingenicoLaneReceipt.ParseV2(File.ReadAllText(@"Files\lane3000.html"));
+            var testLane3000V2 = ingenicoLaneReceipt.ParseV2(File.ReadAllText(@"Files\lane3000V2.html"));
+            var testLane3000V3 = ingenicoLaneReceipt.Parse(File.ReadAllText(@"Files\lane3000V3.html"));
+
+            Assert.AreEqual(true, testLane3000 && testLane3000V2 & testLane3000V3);
+        }
     }
 }
