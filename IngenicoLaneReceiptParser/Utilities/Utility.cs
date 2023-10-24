@@ -6,7 +6,7 @@ namespace IngenicoLaneReceiptParser.Utilities
     {
         public static string GetHTMLInnerText(HtmlDocument htmlDocument, string xpath)
         {
-            return htmlDocument.DocumentNode.SelectSingleNode(xpath).InnerText;
+            return htmlDocument.DocumentNode.SelectSingleNode(xpath)?.InnerText;
         }
     }
 }
