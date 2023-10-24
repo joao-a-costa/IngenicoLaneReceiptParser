@@ -100,6 +100,8 @@ namespace IngenicoLaneReceiptParser
                 Amount = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[31]/div[2]"),
                 VerifiedByPIN = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[37]/div[1]")
             };
+            if (string.IsNullOrEmpty(PaymentDetails.Amount))
+                PaymentDetails.Amount = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[32]/div[2]");
             ReceiptFooter = new ReceiptFooter
             {
                 Text1 = Utility.GetHTMLInnerText(helpDocument, $"{BaseXPath}[41]"),
