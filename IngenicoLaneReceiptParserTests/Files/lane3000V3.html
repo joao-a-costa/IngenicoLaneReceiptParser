@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            width: 300px;
+            border: 3px solid black;
+        }
+
+        div {
+            border: 1px dotted red;
+        }
+
+            div:empty {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+    <!--ReceiptHeader Begin-->
+    <div id=MerchantName-txn-id style=\"font-size:32px;\">MINI MIX 7</div>
+    <div id=MerchantAddress1-txn-id>HIGH STREET</div>
+    <div id=MerchantAddress2-txn-id>HOUNSLOW</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div style=\"display:none; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">{VATNumber_Title}</div>
+        <div style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:table; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">MID:</div>
+        <div id=MerchantID-txn-id style=\"display:table-cell; text-align:right;\">1517083</div>
+    </div>
+    <div style=\"display:table; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">TID:</div>
+        <div id=TerminalIdentity-txn-id style=\"display:table-cell; text-align:right;\">26229840</div>
+    </div>
+    <div style=\"display:none; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">{AcquirerID_Title}</div>
+        <div style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:none; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">{IssuerID_Title}</div>
+        <div style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <!--ReceiptHeader End-->
+    <!--CardSchemeDetails Begin-->
+    <div style=\"display:none; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\"></div>
+        <div id=ShortReferenceNumber-txn-id style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:table-cell; text-align:right;\"></div>
+    <div id=LongReferenceNumber-txn-id style=\"display:table-cell; text-align:right;\"></div>
+    <div style=\"display:none; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">{Waiter_Title}</div>
+        <div style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:table; width:100%\">
+        <div style=\"display:table-cell; text-align:left;\">AID:</div>
+        <div style=\"display:table-cell; text-align:right;\">A0000000041010</div>
+    </div>\t\t <div style=\"display:none; text-align:left;\"></div>
+    <div id=ApplicationLabel-txn-id>DEBIT MASTERCARD</div>
+    <div id=CardSchemeName-txn-id style=\"font-size:32px;\">MASTERCARD DEBIT</div>
+    <!--CardSchemeDetails End-->
+    <!--CardDetails Begin-->
+    <div id=PAN-txn-id>**** **** **** 2687 </div>
+    <div style=\"display:table; width:100%\">
+        <div id=StartDate-txn-id style=\"display:table-cell; text-align:left;\">START 08/23</div>
+        <div id=CardExpiryDate-txn-id style=\"display:table-cell; text-align:right;\">EXP 09/26</div>
+    </div>
+    <div style=\"display:table; width:100%\">
+        <div id=EntryMethod-txn-id style=\"display:table-cell; text-align:left;\">CONTACTLESS</div>
+        <div style=\"display:none; text-align:right;\">{IssueNumber_Title} 0</div>
+        <div id=PANSequenceNum-txn-id style=\"display:table-cell; text-align:right;\">PAN.SEQ 0</div>
+    </div>
+    <div></div>
+    <div></div>
+    <div id=CardholderName-txn-id></div>
+    <div></div>
+    <div id=TransactionType-txn-id>SALE</div>
+    <!--CardDetails End-->
+    <div></div>
+    <div style=\"font-size:32px;\">MERCHANT COPY</div>
+    <div></div>
+    <!--PaymentDetails Begin-->
+    <div></div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:table-cell; text-align:left;\">AMOUNT</div>
+        <div id=TransactionAmountWithCurrency-txn-id style=\"display:table-cell; text-align:right;\">&#xa3;1.99</div>
+    </div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:table-cell; text-align:left;\"></div>
+        <div id=CashbackAmountWithCurrency-txn-id style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:table-cell; text-align:left;\"></div>
+        <div id=GratuityAmountWithCurrency-txn-id style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div></div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:table-cell; text-align:left;\"></div>
+        <div id=AmountTotalWithCurrency-txn-id style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div></div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:block; font-size:32px; text-align:left;\">No CVM Used </div>
+    </div>
+    <div style=\"font-size:32px; text-align:left;\"></div>
+    <div></div>
+    <!--PaymentDetails End-->
+    <!--ReceiptFooter Begin-->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id=TimeDate-txn-id>11:51:00 24/10/23</div>
+    <div></div>
+    <div id=HostMessage-txn-id></div>
+    <div style=\"display:none\">
+        <div style=\"font-size:32px;\">*******************</div>
+    </div>
+    <div id=AccountVerificationOutcome-txn-id></div>
+    <div id=TransactionStatus-txn-id style=\"font-size:32px;\">AUTH CODE: HE8OZS</div>
+    <div style=\"display:none\">
+        <div style=\"font-size:32px;\">*******************</div>
+    </div>
+    <div style=\"display:none\">
+        <div>{TransactionID_Title}</div>
+        <div id=TransactionID-txn-id></div>
+    </div>
+    <div style=\"display:none\">
+        <div>{TransactionIDCheckDigit_Title}</div>
+        <div id=TXNIDCheckDigit-txn-id></div>
+    </div>
+    <div style=\"display:none\">
+        <div>{VerificationResponse_Title}</div>
+        <div></div>
+        <div></div>
+    </div>
+    <div style=\"display:table; width:100%; font-size:32px;\">
+        <div style=\"display:table-cell; text-align:left;\"></div>
+        <div style=\"display:table-cell; text-align:right;\"></div>
+    </div>
+    <div style=\"display:block\">
+        <div id=ReceiptNumber-txn-id>RECEIPT 0750</div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id=SettlementAcqName-txn-id></div>
+    <div id=SettlementResult-txn-id></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id=SettlementSchemeCardName-txn-id></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id=QuantityValueDebits-txn-id></div>
+    <div></div>
+    <div id=QuantityValueCredits-txn-id></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id=QuantityValueClessDebits-txn-id></div>
+    <div></div>
+    <div id=QuantityValueClessCredits-txn-id></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div style=\"font-size:32px;\"></div>
+    <div style=\"font-size:32px;\"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!--ReceiptFooter End-->
+</body>
+</html>
