@@ -1,13 +1,20 @@
 ﻿using HtmlAgilityPack;
 using IngenicoLaneReceiptParser.Models;
 using IngenicoLaneReceiptParser.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace IngenicoLaneReceiptParser
 {
     public class IngenicoLaneReceipt
     {
+        private const string Xpath = "//div";
+        private List<string> ListStylesToIgnore = new List<string>() { "\"display:table-cell;", "\"display:block" };
+
         public enum IngenicoLaneModel
         {
             Lane3000
@@ -39,6 +46,7 @@ namespace IngenicoLaneReceiptParser
 
         #region "Methods"
 
+        [Obsolete("Parse is deprecated, please use ParseV3 instead.")]
         public bool Parse(string htmlToParse)
         {
             bool res = true;
@@ -123,6 +131,7 @@ namespace IngenicoLaneReceiptParser
             return res;
         }
 
+        [Obsolete("Parse is deprecated, please use ParseV3 instead.")]
         public bool ParseV2(string htmlToParse)
         {
             bool res = true;
@@ -136,6 +145,35 @@ namespace IngenicoLaneReceiptParser
                 if (!string.IsNullOrEmpty(innerText))
                     Result.Add(innerText);
             });
+
+            return res;
+        }
+
+        public bool ParseV3(string htmlToParse)
+        {
+            bool res = true;
+
+            Result.Clear();
+
+            var document = new HtmlDocument();
+            document.LoadHtml(htmlToParse);
+
+            foreach (HtmlNode div in document.DocumentNode.SelectNodes(Xpath).Where(
+                w =>
+                    !string.IsNullOrEmpty(w.InnerText.Trim()) &&
+                    !w.InnerText.Trim().StartsWith("{") &&
+                    !w.InnerText.Trim().StartsWith("}") &&
+                    !Regex.IsMatch(w.InnerText.Trim(), @"\{.*?\}") &&
+                    !w.GetAttributeValue("style", "").Contains("\"display:table-cell;") &&
+                    !w.GetAttributeValue("style", "").Contains("\"display:block")
+                )
+            )
+            {
+                if(div.ChildNodes.Count > 1)
+                    Result.Add(string.Join(" ", div.ChildNodes.Where(w => !string.IsNullOrEmpty(w.InnerText.Trim())).Select(s => s.InnerText)));
+                else
+                    Result.Add(div.InnerText);
+            }
 
             return res;
         }
