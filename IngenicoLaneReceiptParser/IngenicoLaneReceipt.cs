@@ -164,8 +164,8 @@ namespace IngenicoLaneReceiptParser
                     !w.InnerText.Trim().StartsWith("{") &&
                     !w.InnerText.Trim().StartsWith("}") &&
                     !Regex.IsMatch(w.InnerText.Trim(), @"\{.*?\}") &&
-                    !w.GetAttributeValue("style", "").Contains("\"display:table-cell;") &&
-                    !w.GetAttributeValue("style", "").Contains("\"display:block")
+                    !w.GetAttributeValue("style", "").Contains("display:table-cell") &&
+                    !w.GetAttributeValue("style", "").Contains("display:block")
                 )
             )
             {
